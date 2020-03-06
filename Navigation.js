@@ -28,8 +28,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons'
-
-
+import { Iconss } from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import Icons from 'react-native-vector-icons/FontAwesome';
 
 import ScreenOne from './screens/ScreenOne'
 import ScreenTwo from './screens/ScreenTwo'
@@ -40,17 +41,20 @@ import ScreenSeven from './screens/ScreenSeven'
 
 import Bookit from './screens/Bookit'
 
+// HotelSCreen
+import Activity from './screens/hotel/Activities'
+import Bookings from './screens/hotel/Bookings'
+import Availability from './screens/hotel/Availability'
+import Messages from './screens/hotel/Messages'
+import More from './screens/hotel/More'
+import { Iconsss } from 'react-native-elements'
+
+
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function HomeScreen() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
-      </View>
-    );
-  }
-  
+
   function SettingsScreen() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -74,30 +78,45 @@ function HotelNav() {
   
   function HotelTab() {
     return (
-        <Tab.Navigator 
-        screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-              let iconName;
+      <Tab.Navigator
+      initialRouteName="Activity"
+      
+     tabBarOptions={
+{
+  labelStyle:{
+    fontSize: 13,
+    marginBottom:1,
+    // fontWeight:'bold'
+  },
+  activeTintColor: '#1192d1',
+  showIcon: true,
+}
+     }
+      // style={{ backgroundColor: 'tomato' }}
+
+      //        screenOptions={({ route }) => ({
+      //        tabBarIcon: ({ focused, color, size }) => {
+      //          let iconName;
   
-              if (route.name === 'Home') {
-                iconName = focused
-                  ? 'home'
-                  : 'home';
-              } else if (route.name === 'Settings') {
-                iconName = focused ? 'home' : 'home';
-              }
+      //          if (route.name === 'Home') {
+      //            iconName = focused
+      //              ? 'home'
+      //              : 'home';
+      //          } else if (route.name === 'Settings') {
+      //            iconName = focused ? 'home' : 'home';
+      //          }
   
-              // You can return any component that you like here!
-              return <Icon name={iconName} size={size} color={color} />;
-            },
-          })}
-          tabBarOptions={{
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
-          }}
+      //          // You can return any component that you like here!
+      //          return <Icon name={iconName} size={18} color='' />;
+      //        },
+      //      })}    
   >
-          <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Settings" component={SettingsScreen} />
+    
+          <Tab.Screen name="Activity" component={Activity} />
+          <Tab.Screen name="Bookings" component={Bookings} />
+          <Tab.Screen name="Availability" component={Availability} />
+          <Tab.Screen name="Messages" component={Messages} />
+          <Tab.Screen name="More" component={More} />
         </Tab.Navigator>
       
     );
