@@ -14,7 +14,7 @@ import {
   View,
   Text,
   StatusBar,
-  Button
+  Button,Image
 } from 'react-native';
 
 import {
@@ -31,7 +31,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Iconss } from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Icons from 'react-native-vector-icons/FontAwesome';
-
+// import img from './images/'
 import ScreenOne from './screens/ScreenOne'
 import ScreenTwo from './screens/ScreenTwo'
 import ScreenThree from './screens/ScreenThree'
@@ -39,13 +39,28 @@ import ScreenFour from './screens/ScreenFour'
 import ScreenSix from './screens/ScreenSix'
 import ScreenSeven from './screens/ScreenSeven'
 
+//import IMGAES 
+import iconActivity from "./images/pulseblue.png"
+import iconActivitys from './images/pulse.png'
+import iconBooking from "./images/listblue.png"
+import iconBookings from './images/list.png' 
+import iconAvailability from "./images/calendarblue.png"
+import iconAvailabilitys from './images/calendar.png' 
+import iconMessages from './images/messageblue.png'
+import iconMessagess from './images/commentgray.png'
+import iconMore from './images/moreblue.png'
+import iconMores from './images/moregray.png'
+
+
 import Bookit from './screens/Bookit'
 
 // HotelSCreen
 import Activity from './screens/hotel/Activities'
 import Bookings from './screens/hotel/Bookings'
 import Availability from './screens/hotel/Availability'
-import Messages from './screens/hotel/Messages'
+import Messages from './screens/hotel/Messages/Messages'
+import MessagesOpen from './screens/hotel/Messages/MessagesOpen' 
+import MessageList from './component/messageList'
 import More from './screens/hotel/More'
 import Setting from './screens/hotel/Setting/setting'
 
@@ -57,7 +72,7 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const HotelMore = createStackNavigator()
-
+const HotelMessage = createStackNavigator()
 
 
 function MoreTab() {
@@ -66,6 +81,16 @@ function MoreTab() {
         <HotelMore.Screen name="More" component={More} />
         <HotelMore.Screen name="Setting" component={Setting} />
       </HotelMore.Navigator>
+  );
+};
+
+function MessageTab() {
+  return (
+      <HotelMessage.Navigator screenOptions={{headerShown:false}}>
+        <HotelMessage.Screen name="Messages" component={Messages} />
+        <HotelMessage.Screen name="MessageList" component={MessageList} />
+        <HotelMessage.Screen name="MessagesOpen" component={MessagesOpen} />
+      </HotelMessage.Navigator>
   );
 };
 
@@ -86,7 +111,6 @@ function HotelNav() {
     return (
       <Tab.Navigator
       initialRouteName="Activity"
-      
      tabBarOptions={
 {
   style: {
@@ -102,30 +126,39 @@ function HotelNav() {
   showIcon: true,
 }
      }
-      // style={{ backgroundColor: 'tomato' }}
+      style={{ backgroundColor: 'tomato' }}
 
-      //        screenOptions={({ route }) => ({
-      //        tabBarIcon: ({ focused, color, size }) => {
-      //          let iconName;
+             screenOptions={({ route }) => ({
+             tabBarIcon: ({ focused, color, size }) => {
+               let iconName;
   
-      //          if (route.name === 'Home') {
-      //            iconName = focused
-      //              ? 'home'
-      //              : 'home';
-      //          } else if (route.name === 'Settings') {
-      //            iconName = focused ? 'home' : 'home';
-      //          }
+               if (route.name === 'Activity') {
+                 iconName = focused
+                   ? iconActivity
+                   : iconActivitys
+               } else if (route.name === 'Bookings') {
+                 iconName = focused ? iconBooking : iconBookings;
+               }
+               else if (route.name === 'Availability') {
+                iconName = focused ? iconAvailability : iconAvailabilitys;
+              }
+              else if (route.name === 'Messages') {
+                iconName = focused ? iconMessages : iconMessagess;
+              }
+              else if (route.name === 'More') {
+                iconName = focused ? iconMore : iconMores;
+              }
   
-      //          // You can return any component that you like here!
-      //          return <Icon name={iconName} size={18} color='' />;
-      //        },
-      //      })}    
+               // You can return any component that you like here!
+               return <Image style={{width:20,height:20,marginTop:5}} source={iconName} />;
+             },
+           })}    
   >
     
           <Tab.Screen name="Activity" component={Activity} />
           <Tab.Screen name="Bookings" component={Bookings} />
           <Tab.Screen name="Availability" component={Availability} />
-          <Tab.Screen name="Messages" component={Messages} />
+          <Tab.Screen name="Messages" component={MessageTab} />
           <Tab.Screen name="More" component={MoreTab} />
         </Tab.Navigator>
       

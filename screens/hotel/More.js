@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, ScrollView,Image,Dimensions,ImageBackground,Text,TouchableOpacity } from 'react-native';
 import { Header } from 'react-native-elements';
 import {Card} from 'native-base'
-
+import img from '../../images/company.png'
 class More extends React.Component {
 //   static navigationOptions = {
 //     header: null
@@ -32,7 +32,7 @@ class More extends React.Component {
 <View style={{marginLeft:20}}>
       <TouchableOpacity onPress={()=>navigate('')}>
       <View style={{marginTop:30,flexDirection:'row',}}>
-      <Image source={require('../../images/company.png')}  style={{marginLeft:0,width:22,height:22,}}/>
+      <Image source={img}  style={{marginLeft:0,width:22,height:22,}}/>
 <Text style={{fontSize:14,fontWeight:'500',marginLeft:20}}>Property details</Text>
       </View>
 </TouchableOpacity>
