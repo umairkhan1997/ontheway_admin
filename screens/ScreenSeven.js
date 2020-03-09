@@ -27,10 +27,13 @@ class ScreenSeven extends React.Component {
       
         return (
             <View  style={{flex:1}}>
-                <View style={{height:55,marginTop:22 }} >
+                <View style={{height:55,marginTop:0 }} >
             <Header style={{ backgroundColor: '#1f3d48', }} >
-                                     <Left >
-<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>1# Form</Text>
+            <Left style={{flexDirection:'row',marginTop:20}}>
+                                     <TouchableOpacity onPress={()=>navigate('ScreenSix')}>
+                                     <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
+                                     </TouchableOpacity>
+<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>6# Form</Text>
      </Left>
      <Right/>
             </Header>

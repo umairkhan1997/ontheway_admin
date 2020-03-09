@@ -11,17 +11,11 @@ class Activities extends React.Component {
     super(props)
   }
 
-  Iconic =()=>{
-    return(
-      <View>
 
-      </View>
-    )
-  }
   render() {
 
     return (
-      <View style={{  }}>
+      <View style={{ flex:1 }}>
         <Header
          containerStyle={{
           backgroundColor: '#213d48',
@@ -29,10 +23,12 @@ class Activities extends React.Component {
         }}
         placement="right"
   leftComponent={{ text: 'Activities', style: { color: '#fff',fontSize:18,marginBottom:10,fontWeight:'bold' } }}
-  centerComponent={{ icon: 'filter_list', color: '#fff',marginRight:10,marginBottom:10 }}
+  centerComponent={{ icon: 'filter', color: '#fff',marginRight:10,marginBottom:10 }}
   rightComponent={{ icon: 'search', color: '#fff',marginRight:10,marginBottom:10 }}
 />
-        <Text>Activities!</Text>
+      <View style={{ flex: 1,width:'90%',marginLeft:'5%', justifyContent: 'center', alignItems: 'center', }}>
+          <Text style={{textAlign:'center'}}>Thanks for downloading the Admin Panel! Get Updates on your property's activity here .</Text>
+      </View>
       </View>
     );
   }

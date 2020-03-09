@@ -47,6 +47,8 @@ import Bookings from './screens/hotel/Bookings'
 import Availability from './screens/hotel/Availability'
 import Messages from './screens/hotel/Messages'
 import More from './screens/hotel/More'
+import Setting from './screens/hotel/Setting/setting'
+
 import { Iconsss } from 'react-native-elements'
 
 
@@ -54,14 +56,18 @@ import { Iconsss } from 'react-native-elements'
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+const HotelMore = createStackNavigator()
 
-  function SettingsScreen() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
+
+
+function MoreTab() {
+  return (
+      <HotelMore.Navigator screenOptions={{headerShown:false}}>
+        <HotelMore.Screen name="More" component={More} />
+        <HotelMore.Screen name="Setting" component={Setting} />
+      </HotelMore.Navigator>
+  );
+};
 
 function HotelNav() {
     return (
@@ -83,10 +89,14 @@ function HotelNav() {
       
      tabBarOptions={
 {
+  style: {
+    backgroundColor: "white",
+    height: 50,
+},
   labelStyle:{
     fontSize: 13,
     marginBottom:1,
-    // fontWeight:'bold'
+    fontWeight:'bold'
   },
   activeTintColor: '#1192d1',
   showIcon: true,
@@ -116,7 +126,7 @@ function HotelNav() {
           <Tab.Screen name="Bookings" component={Bookings} />
           <Tab.Screen name="Availability" component={Availability} />
           <Tab.Screen name="Messages" component={Messages} />
-          <Tab.Screen name="More" component={More} />
+          <Tab.Screen name="More" component={MoreTab} />
         </Tab.Navigator>
       
     );
