@@ -23,9 +23,9 @@ class ScreenTwo extends React.Component {
         const {navigate}=this.props.navigation;
       
         return (
-            <View  style={{flex:1}}>
+            <View  style={{flex:1,backgroundColor:'white'}} >
                 <View style={{height:55,marginTop:0 }} >
-            <Header style={{ backgroundColor: '#1f3d48', }} >
+            <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
                                      <Left style={{flexDirection:'row',marginTop:20}}>
                                      <TouchableOpacity onPress={()=>navigate('ScreenOne')}>
                                      <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>

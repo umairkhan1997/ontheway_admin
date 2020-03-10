@@ -23,9 +23,9 @@ class ScreenFour extends React.Component {
         const {navigate}=this.props.navigation;
       
         return (
-            <View  style={{flex:1}}>
+            <View  style={{flex:1,backgroundColor:'white'}}>
                 <View style={{height:55,marginTop:0 }} >
-            <Header style={{ backgroundColor: '#1f3d48', }} >
+            <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
             <Left style={{flexDirection:'row',marginTop:20}}>
                                      <TouchableOpacity onPress={()=>navigate('ScreenThree')}>
                                      <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
@@ -43,13 +43,13 @@ class ScreenFour extends React.Component {
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>i) Parking :</Text>
             <View style={{flexDirection:'row',justifyContent:'center',marginTop:20}}>
-            <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'3%'}}>
+            <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'3%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'0%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'0%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,Free</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'3%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'3%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,Paid</Text>
     </Button>
             </View>
@@ -58,13 +58,13 @@ class ScreenFour extends React.Component {
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>ii) Break Fast :</Text>
             <View style={{flexDirection:'column',justifyContent:'center',marginTop:20}}>
-            <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'90%',marginHorizontal:'5%'}}>
+            <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'90%',marginHorizontal:'5%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'90%',marginHorizontal:'5%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'90%',marginHorizontal:'5%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,Additional Charges</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'90%',marginHorizontal:'5%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'90%',marginHorizontal:'5%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,It's Includes In Price</Text>
     </Button>
             </View>
@@ -81,10 +81,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Wifi : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -98,10 +98,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Restaurent : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -118,10 +118,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Room Service : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -135,10 +135,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Bar : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -153,10 +153,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>24 Hour Service : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -171,10 +171,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Garden : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -189,10 +189,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Terrace : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -207,10 +207,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Airport Shuttle: </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -225,10 +225,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Family Room : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -243,10 +243,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Swimming Pool : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes </Text>
     </Button>
             </View>
@@ -261,10 +261,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Additional Matteras : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Paid</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Free</Text>
     </Button>
             </View>
@@ -279,10 +279,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Air Condition : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Paid</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Free</Text>
     </Button>
             </View>
@@ -297,10 +297,10 @@ class ScreenFour extends React.Component {
             <Text style={{fontSize:16,fontWeight:'500',}}>Fitness Center : </Text>
             </View>
             <View style={{flexDirection:'row',width:'50%'}}>
-                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#ba0916',height:30,width:'25%',marginHorizontal:'1%'}}>
+                <Button onPress={()=>navigate('')} style={{justifyContent:'center',marginBottom:20,backgroundColor:'#0078d7',height:30,width:'25%',marginHorizontal:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Paid</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',marginBottom:20,height:30,width:'25%',marginHorizontal:'1%',marginLeft:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Free</Text>
     </Button>
             </View>
@@ -318,13 +318,13 @@ Amenities :
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:20,marginTop:20}}>i) Can You Provide Extra Bed ?</Text>
             <View style={{flexDirection:'row',justifyContent:'center',marginTop:20}}>
-            <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'3%'}}>
+            <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'3%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'0%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'0%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,Free</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'3%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'3%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,Paid</Text>
     </Button>
             </View>
@@ -341,13 +341,13 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:20,marginTop:20}}>ii) Can You Provide Extra Matteras ?</Text>
             <View style={{flexDirection:'row',justifyContent:'center',marginTop:20}}>
-            <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'3%'}}>
+            <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'3%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'0%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'0%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,Free</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'3%'}}>
+    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'3%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes ,Paid</Text>
     </Button>
             </View>
@@ -363,7 +363,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
           </ScrollView>
           </KeyboardAvoidingView >
           <View>
-    <Button onPress={()=>navigate('ScreenSix')} style={{justifyContent:'center',backgroundColor:'#0078d7',width:'98%',marginLeft:'1%'}}>
+    <Button onPress={()=>navigate('ScreenFive')} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
 </View>

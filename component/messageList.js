@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, Platform, TouchableOpacity, AsyncStorage } from 'react-native';
 import { SearchBar,Avatar, Divider } from 'react-native-elements';
-// import { withNavigation } from '';
+// import { withNavigation } from '@react-navigation/stack';
 
 
 class MessageList extends Component {
@@ -30,20 +30,12 @@ class MessageList extends Component {
   // }
 
     render() {
-      const {navigate}=this.props.navigation;
+      // const {navigate}=this.props.navigation;
 
         return (
           <View style={{}}>
            <TouchableOpacity 
-          //  onPress={()=>{
-          //    navigate('MessageOpen',{
-          //     //  room_id: this.state.room_id,
-          //     //  user_id: this.props.user_id,
-          //     //  avatar: this.props.uri,
-          //     //  name: this.props.title,
-          //     //  msg:this.props.subtitle
-          //    })
-          //  }}
+          //  onPress={()=>navigate('MessagesOpen')}
            >
 
             <View style={{padding:8,flexDirection:'row',justifyContent:'space-between'}}>

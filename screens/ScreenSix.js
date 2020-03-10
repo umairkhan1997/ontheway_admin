@@ -41,14 +41,14 @@ class ScreenSix extends React.Component {
         const {navigate}=this.props.navigation;
       
         return (
-            <View  style={{flex:1}}>
+            <View  style={{flex:1,backgroundColor:'white'}}>
                 <View style={{height:55,marginTop:0 }} >
-            <Header style={{ backgroundColor: '#1f3d48', }} >
+            <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
             <Left style={{flexDirection:'row',marginTop:20}}>
-                                     <TouchableOpacity onPress={()=>navigate('ScreenFour')}>
+                                     <TouchableOpacity onPress={()=>navigate('ScreenFive')}>
                                      <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
                                      </TouchableOpacity>
-<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>5# Form</Text>
+<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>6# Form</Text>
      </Left>
      <Right/>
             </Header>

@@ -26,14 +26,14 @@ class ScreenSeven extends React.Component {
         const {navigate}=this.props.navigation;
       
         return (
-            <View  style={{flex:1}}>
+            <View  style={{flex:1,backgroundColor:'white'}}>
                 <View style={{height:55,marginTop:0 }} >
-            <Header style={{ backgroundColor: '#1f3d48', }} >
+            <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
             <Left style={{flexDirection:'row',marginTop:20}}>
                                      <TouchableOpacity onPress={()=>navigate('ScreenSix')}>
                                      <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
                                      </TouchableOpacity>
-<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>6# Form</Text>
+<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>7# Form</Text>
      </Left>
      <Right/>
             </Header>
@@ -52,13 +52,13 @@ class ScreenSeven extends React.Component {
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
             </View>
-                        <Text style={{fontSize:16,fontWeight:'500',marginLeft:20,marginTop:20}}> You Can Change Payment When You Get Online.</Text>
+                        <Text style={{fontSize:16,fontWeight:'500',textAlign:'center',marginTop:20}}> You Can Change Payment When You Get Online.</Text>
             </View>
 
             <View>
 
              <Text style={{marginVertical:20,marginTop:40,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Commission</Text>
-<Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20,width:'90%',textTransform:'capitalize'}}>At The Start Of The Month We Will Send You You An Invoice of all booking of previous month , invoice will be sent you in  your dashboard and also on email address : </Text>
+<Text style={{fontSize:16,fontWeight:'500',width:'90%',marginLeft:'5%',marginTop:20,width:'90%',textTransform:'capitalize',textAlign:'center'}}>At The Start Of The Month We Will Send You You An Invoice of all booking of previous month , invoice will be sent you in  your dashboard and also on email address : </Text>
              <Text style={{marginVertical:20,marginTop:40,fontSize:18,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Commission Percentage: 10%</Text>
 
 </View>

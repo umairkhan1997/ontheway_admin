@@ -36,6 +36,7 @@ import ScreenOne from './screens/ScreenOne'
 import ScreenTwo from './screens/ScreenTwo'
 import ScreenThree from './screens/ScreenThree'
 import ScreenFour from './screens/ScreenFour'
+import ScreenFive from './screens/ScreenFive'
 import ScreenSix from './screens/ScreenSix'
 import ScreenSeven from './screens/ScreenSeven'
 
@@ -87,7 +88,7 @@ function MoreTab() {
 function MessageTab() {
   return (
       <HotelMessage.Navigator screenOptions={{headerShown:false}}>
-        <HotelMessage.Screen name="Messages" component={Messages} />
+        <HotelMessage.Screen name="Message" component={Messages} />
         <HotelMessage.Screen name="MessageList" component={MessageList} />
         <HotelMessage.Screen name="MessagesOpen" component={MessagesOpen} />
       </HotelMessage.Navigator>
@@ -101,6 +102,7 @@ function HotelNav() {
           <Stack.Screen name="ScreenTwo" component={ScreenTwo} />
           <Stack.Screen name="ScreenThree" component={ScreenThree} />
           <Stack.Screen name="ScreenFour" component={ScreenFour} />
+          <Stack.Screen name="ScreenFive" component={ScreenFive} />
           <Stack.Screen name="ScreenSix" component={ScreenSix} />
           <Stack.Screen name="ScreenSeven" component={ScreenSeven} />
         </Stack.Navigator>
