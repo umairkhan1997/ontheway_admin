@@ -5,7 +5,7 @@
    <!-- <uses-permission android:name="android.permission.SYSTEM.ALERT.WINDOW"/> -->
  <uses-permission-sdk-23 android:name="android.permission.CAMERA"/>
 <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-<!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> -->
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <!-- <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" /> -->
     <application
       android:name=".MainApplication"
