@@ -66,9 +66,25 @@ class ScreenSeven extends React.Component {
 
 <View>
 
-             <Text style={{marginVertical:20,marginTop:40,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Agreements</Text>
+             <Text style={{marginTop:40,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Agreements</Text>
 
-             
+             <Text style={{fontSize:16,fontWeight:'500',textAlign:'center',marginVertical:20,fontWeight:'bold'}}> To Complete your registration, please read it before you tick the boxes .</Text>
+
+             <View style={{width:'92%',marginLeft:'4%',marginRight:'4%',flexDirection:'row'}}>
+            <Image source={require('../images/check-box.png')} style={{width:20,height:20}}/>
+            <Text style={{marginLeft:5,fontWeight:'bold'}}> I certify that this is a legal accomodation business with all permits and licenses required from local government  
+            </Text>
+             </View>
+             <View style={{marginTop:10,width:'92%',marginLeft:'4%',marginRight:'4%',flexDirection:'row'}}>
+            <Image source={require('../images/check-box.png')} style={{width:20,height:20}}/>
+            <Text style={{marginLeft:5,fontWeight:'bold'}}> In case , if  you don't send us our comission (from past 2 months ) , we will send you legal notice for it .  
+            </Text>
+             </View>
+             <View style={{marginTop:10,width:'92%',marginLeft:'4%',marginRight:'4%',flexDirection:'row'}}>
+            <Image source={require('../images/check-box.png')} style={{width:20,height:20}}/>
+            <Text style={{marginLeft:5,fontWeight:'bold'}}> If your property gets 6 or more than 6 complains in a month on our platform , we can cancel/block you/your property with giving you any details . 
+            </Text>
+             </View>
       </View>       
           </ScrollView>
           </KeyboardAvoidingView >
