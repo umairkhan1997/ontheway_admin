@@ -16,7 +16,7 @@ class ScreenFive extends React.Component {
         super(props);
         this.state = {
           starCount: 3.5,
-          show:'HIDE',
+               show:'HIDE',
           countR:1,
           images: [],
           selected:0,
