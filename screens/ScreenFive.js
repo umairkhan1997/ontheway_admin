@@ -4,7 +4,8 @@ import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput
 import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,} from 'native-base';
 // import darkblue from '../../color'
 import ImagePicker from 'react-native-image-picker'
-import ImagePickers from "react-native-customized-image-picker";
+// import ImagePickers from "react-native-customized-image-picker";
+import ImagePickerss from 'react-native-image-crop-picker';
 
 
 class ScreenFive extends React.Component {
@@ -48,7 +49,7 @@ class ScreenFive extends React.Component {
           this.setState({ images: this.state.images.concat({
             path: response.path,
             image_uri: response.uri,
-            fileName: response.fileName,
+            fileName: response.fileName, 
             }),
             selected: this.state.selected + 1
           })
@@ -66,29 +67,15 @@ class ScreenFive extends React.Component {
   //   });
   // }
 
-  getImages() {
-    ImagePickers.openPicker({
-        isCamera:true,
-        multiple: true
-    }).then(images => {
-        this.setState({
-        images: images.map(i => {
-            console.log('received image', i);
-    return {uri: i.path, width: i.width, height: i.height, mime: i.mime};
-})
-});
-}).catch(e => alert(e,'sads'));
-}
-renderImage(image) {
-  return <Image style={{width: 300, height: 300, resizeMode: 'contain'}} source={image} />
-}
-renderAsset(image) {
-  if (image.mime && image.mime.toLowerCase().indexOf('video/') !== -1) {
-      return this.renderVideo(image.uri);
+  getImagess() {
+    ImagePickerss.openPicker({
+    multiple: true
+  }).then(images => {
+    console.log(images);
+  });
   }
 
-  return this.renderImage(image);
-}
+
 
     render() {
 
@@ -120,11 +107,12 @@ renderAsset(image) {
 :<ImageBackground source={{uri:this.state.images[0].image_uri}}style={{width:160,height:140,alignSelf:'center'}}/>
 }
 
-<Button onPress={this.getImages} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
-        <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>pic</Text>
-    </Button>
     </TouchableOpacity>
 </View>
+
+    <Button onPress={this.getImagess} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
+        <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>pic crop </Text>
+    </Button>
          
         {this.state.images ? this.state.images.map(i => <View key={i.uri}>{this.renderAsset(i)}</View>) : null}
   
