@@ -1,7 +1,6 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput ,
-    ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity} from 'react-native';
-import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,} from 'native-base';
+import { Text, View,Image,ScrollView,TouchableOpacity} from 'react-native';
+import { Header,Left,Right,Button,Root,Toast} from 'native-base';
 // import darkblue from '../../color'
 
 
@@ -41,6 +40,7 @@ class ScreenSix extends React.Component {
         const {navigate}=this.props.navigation;
       
         return (
+          <Root>
             <View  style={{flex:1,backgroundColor:'white'}}>
                 <View style={{height:55,marginTop:0 }} >
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
@@ -54,7 +54,7 @@ class ScreenSix extends React.Component {
             </Header>
       </View>
       <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Policies</Text>
-      <KeyboardAvoidingView behavior="padding" enabled style={{ flex: 0.95,backgroundColor:'white' }}>
+      <View  style={{ flex: 0.95,backgroundColor:'white' }}>
           <ScrollView style={{ flex:1 }}>
 
             {/* NAME FIELD */}
@@ -135,13 +135,14 @@ class ScreenSix extends React.Component {
        
 
           </ScrollView>
-          </KeyboardAvoidingView >
+          </View >
           <View>
     <Button onPress={()=>navigate('ScreenSeven')} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
 </View>
             </View>
+            </Root>
 );
 }
 }

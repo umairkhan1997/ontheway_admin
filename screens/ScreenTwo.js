@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput ,
     ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity} from 'react-native';
-import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,} from 'native-base';
+import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,Toast, Root} from 'native-base';
 // import darkblue from '../../color'
 
 
@@ -12,17 +12,64 @@ class ScreenTwo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          starCount: 3.5,
-          selected: "Recent",
-          show:'HIDE',
+            propertyName:'',
+            propertyStar:'',
+            contactNumber:null,
+            phoneNumber:null,
+            altPhoneNumber:null,
+            startAddress:'',
+            country:'',
+            city:'',
+            pCode:null,
         }
     }
+
+    ToastFunc=(txt)=>{
+        Toast.show({
+            text: txt,
+            buttonText: "Okay",
+            position: "bottom",
+            duration: 1500,
+            type: "danger",
+          });
+    }
+    Next=()=>{
+        if(this.state.propertyName.length < 6){
+          this.ToastFunc('property Name should be atleast 6 character ');
+            }
+            else if(this.state.propertyStar.length < 1){
+          this.ToastFunc('Property Star field is empty ')
+            }
+            else if(this.state.contactNumber === null){
+                this.ToastFunc('contact Number field is empty ')
+                  }
+                  else if(this.state.phoneNumber === null){
+                    this.ToastFunc('Phone Number field is empty ')
+                      }else if(this.state.altPhoneNumber === null){
+                        this.ToastFunc('Alternate Phone Number field is empty ')
+                          }else if(this.state.startAddress.length < 10){
+                            this.ToastFunc('Address should be atleast 10 character ')
+                              }
+                              else if(this.state.country.length === 0){
+                                this.ToastFunc('country Field is empty')
+                                  }
+                                  else if(this.state.city.length === 0){
+                                    this.ToastFunc('City Field is empty')
+                                      }else if(this.state.pCode === null){
+                                        this.ToastFunc('Enter Postal Code ')
+                                          }
+                                          else{
+                                              this.props.navigation.navigate('ScreenThree')
+                                          }
+                              
+        }
 
     render() {
 
         const {navigate}=this.props.navigation;
       
         return (
+            <Root>
             <View  style={{flex:1,backgroundColor:'white'}} >
                 <View style={{height:55,marginTop:0 }} >
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
@@ -35,9 +82,10 @@ class ScreenTwo extends React.Component {
      <Right/>
             </Header>
       </View>
+      {/* <KeyboardAvoidingView behavior="padding" enabled style={{ backgroundColor:'white' }}> */}
       <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Property Info</Text>
-      <KeyboardAvoidingView behavior="padding" enabled style={{ flex: 0.95,backgroundColor:'white' }}>
-          <ScrollView style={{ flex:1 }}>
+      <View style={{flex: 0.95,}}>
+          <ScrollView style={{  }}>
 
             {/* NAME FIELD */}
             <View>
@@ -56,6 +104,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
    value={this.state.propertyStar}
    onChangeText={propertyStar => this.setState({ propertyStar })}
    placeholder='Property Star Number' placeholderTextColor='gray'
+   keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>
 
@@ -66,6 +115,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
    value={this.state.contactNumber}
    onChangeText={contactNumber => this.setState({ contactNumber })}
    placeholder='contactNumber' placeholderTextColor='gray'
+   keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>
 
@@ -75,6 +125,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
    value={this.state.phoneNumber}
    onChangeText={phoneNumber => this.setState({ phoneNumber })}
    placeholder='phoneNumber' placeholderTextColor='gray'
+   keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>
 
@@ -84,6 +135,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
    value={this.state.altPhoneNumber}
    onChangeText={altPhoneNumber => this.setState({ altPhoneNumber })}
    placeholder='altPhoneNumber' placeholderTextColor='gray'
+   keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>
             <View>
@@ -116,17 +168,23 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
    value={this.state.pCode}
    onChangeText={pCode => this.setState({ pCode })}
    placeholder='pCode' placeholderTextColor='gray'
+   keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>
           </ScrollView>
-          </KeyboardAvoidingView >
+          </View>
+          {/* </KeyboardAvoidingView > */}
           <View>
-    <Button onPress={()=>navigate('ScreenThree')} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
+    <Button
+     onPress={()=>navigate('ScreenThree')} 
+    // onPress={()=>this.Next()}
+    style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
 </View>
             </View>
-);
+            </Root>
+            );
 }
 }
 

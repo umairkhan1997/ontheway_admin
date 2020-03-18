@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput ,
     ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity} from 'react-native';
-import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,} from 'native-base';
+import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,Toast,Root} from 'native-base';
 // import darkblue from '../../color'
 
 
@@ -12,14 +12,14 @@ class ScreenThree extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          starCount: 3.5,
-          selected: "Recent",
-          show:'HIDE',
           countR:1,
+        rnameOne:'',
+        rbedOne:null,
+        guestOne:null,
+        priceOne:null
         }
+
     }
-
-
     _incrementCountR = () => {
         if (this.state.countR == 2) {
             alert("Can't go to above 4");
@@ -35,10 +35,47 @@ class ScreenThree extends React.Component {
         }
       };
 
+      ToastFunc=(txt)=>{
+        Toast.show({
+            text: txt,
+            position: "bottom",
+            duration: 1500,
+            type: "danger",
+          });
+    }
+      RoomOne=()=>{
+        if(this.state.rnameOne.length < 6){
+          console.log('asdasdsdas')
+          this.ToastFunc('Room One Name should be atleast 6 character ');
+            }
+            else if(this.state.rbedOne=== null){
+          this.ToastFunc('Room One Bed field is empty ')
+            }
+            else if(this.state.guestOne=== null){
+              this.ToastFunc('Room One Guest field is empty ')
+                }else if(this.state.priceOne=== null){
+                  this.ToastFunc('Room One Price field is empty ')
+                    }
+                    else{
+                      console.log('asds')
+                    }
+                
+      }
+
+Next=()=>{
+  if(this.state.countR === 1){
+    this.RoomOne()
+  }
+  else{
+    console.log('asds')
+  }
+}
+
     render() {
 
         const {navigate}=this.props.navigation;
         return (
+          <Root>
             <View  style={{flex:1,backgroundColor:'white'}}>
                 <View style={{height:55,marginTop:0 }} >
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
@@ -52,8 +89,9 @@ class ScreenThree extends React.Component {
             </Header>
       </View>
       <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Property Info</Text>
-      <KeyboardAvoidingView behavior="padding" enabled style={{ flex: 0.95,backgroundColor:'white' }}>
-          <ScrollView style={{ flex:1 }}>
+      {/* <KeyboardAvoidingView behavior="padding" enabled style={{ flex: 0.95,backgroundColor:'white' }}> */}
+      <View style={{flex:0.95}}>
+          <ScrollView style={{ }}>
 
             {/* NAME FIELD */}
             <View>
@@ -122,32 +160,33 @@ class ScreenThree extends React.Component {
                             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>i) Room Name :</Text>
             <Input
-   value={this.state.rname}
-   onChangeText={rname => this.setState({ rname })}
+   value={this.state.rnameOne}
+   onChangeText={rnameOne => this.setState({ rnameOne })}
    placeholder='Room Name' placeholderTextColor='gray'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>   
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>ii) Room Bed :</Text>
             <Input
-   value={this.state.rbed}
-   onChangeText={rbed => this.setState({ rbed })}
+   value={this.state.rbedOne}
+   onChangeText={rbedOne => this.setState({ rbedOne })}
    placeholder='Room Bed' placeholderTextColor='gray'
+   keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>  
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>iii) How Many Guest Can Stay In Room :</Text>
             <Input
-   value={this.state.guest}
-   onChangeText={guest => this.setState({ guest })}
+   value={this.state.guestOne}
+   onChangeText={guestOne => this.setState({ guestOne })}
    placeholder='Guest' placeholderTextColor='gray' keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View> 
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>iv) Room Price Per Day :</Text>
             <Input
-   value={this.state.price}
-   onChangeText={price => this.setState({ price })}
+   value={this.state.priceOne}
+   onChangeText={priceOne => this.setState({ priceOne })}
    placeholder='Room Price' placeholderTextColor='gray' keyboardType='numeric'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>   
@@ -178,13 +217,17 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             </View>
                        </View>
           </ScrollView>
-          </KeyboardAvoidingView >
+          </View >
           <View>
-    <Button onPress={()=>navigate('ScreenFour')} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
+    <Button
+    // onPress={()=>this.Next()}
+     onPress={()=>navigate('ScreenFour')} 
+    style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
 </View>
             </View>
+            </Root>
 );
 }
 }

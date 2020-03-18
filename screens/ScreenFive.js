@@ -1,7 +1,6 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput ,
-    ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity} from 'react-native';
-import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,} from 'native-base';
+import { Text, View,Image,ImageBackground,ScrollView,TouchableOpacity} from 'react-native';
+import { Header,Left,Right,Button,Root,Toast} from 'native-base';
 // import darkblue from '../../color'
 import ImagePicker from 'react-native-image-picker'
 // import ImagePickers from "react-native-customized-image-picker";
@@ -82,6 +81,7 @@ class ScreenFive extends React.Component {
         const {navigate}=this.props.navigation;
       
         return (
+          <Root>
             <View  style={{flex:1,backgroundColor:'white'}}>
                 <View style={{height:55,marginTop:0 }} >
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
@@ -94,7 +94,7 @@ class ScreenFive extends React.Component {
      <Right/>
             </Header>
       </View>
-      <KeyboardAvoidingView behavior="padding" enabled style={{ flex: 0.95,backgroundColor:'white' }}>
+      <View  style={{ flex: 0.95,backgroundColor:'white' }}>
           <ScrollView style={{ flex:1 }}>
 
 
@@ -117,13 +117,14 @@ class ScreenFive extends React.Component {
         {this.state.images ? this.state.images.map(i => <View key={i.uri}>{this.renderAsset(i)}</View>) : null}
   
           </ScrollView>
-          </KeyboardAvoidingView >
+          </View >
           <View>
     <Button onPress={()=>navigate('ScreenSix')} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
 </View>
             </View>
+            </Root>
 );
 }
 }
