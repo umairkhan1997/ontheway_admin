@@ -19,7 +19,7 @@ class Activities extends React.Component {
         <Header
          containerStyle={{
           backgroundColor: '#213d48',
-          height:60
+          height:Platform.OS==='ios'?85:60
         }}
         placement="right"
   leftComponent={{ text: 'Activities', style: { color: '#fff',fontSize:18,marginBottom:10,fontWeight:'bold' } }}

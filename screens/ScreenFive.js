@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View,Image,ImageBackground,ScrollView,TouchableOpacity} from 'react-native';
+import { Text, View,Image,ImageBackground,ScrollView,TouchableOpacity, Platform} from 'react-native';
 import { Header,Left,Right,Button,Root,Toast} from 'native-base';
 // import darkblue from '../../color'
 import ImagePicker from 'react-native-image-picker'
@@ -83,7 +83,7 @@ class ScreenFive extends React.Component {
         return (
           <Root>
             <View  style={{flex:1,backgroundColor:'white'}}>
-                <View style={{height:55,marginTop:0 }} >
+                <View style={{height:Platform.OS==='ios'?85:55,marginTop:0 }} >
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
             <Left style={{flexDirection:'row',marginTop:20}}>
                                      <TouchableOpacity onPress={()=>navigate('ScreenFour')}>

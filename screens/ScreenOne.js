@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput ,
     ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity} from 'react-native';
 import { Root,Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input, Toast,} from 'native-base';
+import { Platform } from 'react-native';
 // import darkblue from '../../color'
 
 
@@ -85,7 +86,7 @@ else if(this.state.username.length < 6){
             </Header>
       </View>
       {/* <KeyboardAvoidingView behavior="padding" enabled style={{flex: 0.95, backgroundColor:'white' }}> */}
-      <Text style={{paddingVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Add Your Info</Text>
+      <Text style={{paddingVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48',marginTop:Platform.OS==='ios'?20:0}}>Add Your Info</Text>
       <View style={{flex:0.95}}>
           <ScrollView style={{ }}>
 

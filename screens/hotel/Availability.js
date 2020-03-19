@@ -36,9 +36,9 @@ class Availability extends React.Component {
       <Header
        containerStyle={{
         backgroundColor: '#213d48',
-        height:60
+        height:Platform.OS==='ios'?85:60
       }}
-leftComponent={{ text: 'Other', style: { color: '#fff',fontSize:18,marginBottom:10,fontWeight:'bold' } }}
+leftComponent={{ text: 'Other', style: { width:'200%',color: '#fff',fontSize:18,marginBottom:10,fontWeight:'bold' } }}
 rightComponent={{ icon: 'search', color: '#fff',marginRight:10,marginBottom:10 }}
 />
     <View style={{ flex: 1}}>

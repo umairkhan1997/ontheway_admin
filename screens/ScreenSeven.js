@@ -35,7 +35,7 @@ class ScreenSeven extends React.Component {
      <Right/>
             </Header>
       </View>
-      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Payment</Text>
+      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48',marginTop:Platform.OS==='ios'?40:0}}>Payment</Text>
       <View  style={{ flex: 0.95,backgroundColor:'white' }}>
           <ScrollView style={{ flex:1 }}>
     

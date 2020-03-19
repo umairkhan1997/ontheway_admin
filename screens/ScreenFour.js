@@ -35,7 +35,7 @@ class ScreenFour extends React.Component {
      <Right/>
             </Header>
       </View>
-      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Facilities & Services</Text>
+      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48',marginTop:Platform.OS==='ios'?40:0}}>Facilities & Services</Text>
       {/* <KeyboardAvoidingView behavior="padding" enabled style={{ ,backgroundColor:'white' }}> */}
           <View style={{flex: 0.95}}>
           <ScrollView style={{ flex:1 }}>

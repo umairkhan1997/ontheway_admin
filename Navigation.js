@@ -14,7 +14,7 @@ import {
   View,
   Text,
   StatusBar,
-  Button,Image
+  Button,Image, Platform
 } from 'react-native';
 
 import {
@@ -117,7 +117,7 @@ function HotelNav() {
 {
   style: {
     backgroundColor: "white",
-    height: 50,
+    height:Platform.OS==='ios'?90: 50,
 },
   labelStyle:{
     fontSize: 13,

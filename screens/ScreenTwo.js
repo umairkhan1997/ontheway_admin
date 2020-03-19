@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput ,
-    ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity} from 'react-native';
+    ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity,Platform} from 'react-native';
 import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,Toast, Root} from 'native-base';
 // import darkblue from '../../color'
 
@@ -83,7 +83,7 @@ class ScreenTwo extends React.Component {
             </Header>
       </View>
       {/* <KeyboardAvoidingView behavior="padding" enabled style={{ backgroundColor:'white' }}> */}
-      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Property Info</Text>
+      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48',marginTop:Platform.OS==='ios'?40:0}}>Property Info</Text>
       <View style={{flex: 0.95,}}>
           <ScrollView style={{  }}>
 

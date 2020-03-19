@@ -19,7 +19,7 @@ class More extends React.Component {
         <Header
          containerStyle={{
           backgroundColor: '#213d48',
-          height:60
+          height:Platform.OS==='ios'?85:60
         }}
   leftComponent={{ text: 'Other', style: { color: '#fff',fontSize:18,marginBottom:10,fontWeight:'bold' } }}
   rightComponent={{ icon: 'search', color: '#fff',marginRight:10,marginBottom:10 }}
@@ -31,7 +31,7 @@ class More extends React.Component {
 {/* Property details */}
 <View style={{marginLeft:20}}>
       <TouchableOpacity onPress={()=>navigate('')}>
-      <View style={{marginTop:30,flexDirection:'row',}}>
+      <View style={{marginTop:20,flexDirection:'row',}}>
       <Image source={img}  style={{marginLeft:0,width:22,height:22,}}/>
 <Text style={{fontSize:14,fontWeight:'500',marginLeft:20}}>Property details</Text>
       </View>
@@ -47,7 +47,7 @@ class More extends React.Component {
       </View>
 </TouchableOpacity>
 </View>
-<View style={{borderBottomColor:'gray',borderBottomWidth:0.3,marginTop:10}}/>
+<View style={{borderBottomColor:'gray',borderBottomWidth:0.8,marginTop:10}}/>
 {/* Finance */}
 <View style={{marginLeft:20}}>
       <TouchableOpacity onPress={()=>navigate('')}>
@@ -67,7 +67,7 @@ class More extends React.Component {
       </View>
 </TouchableOpacity>
 </View>
-<View style={{borderBottomColor:'gray',borderBottomWidth:0.3,marginTop:10}}/>      
+<View style={{borderBottomColor:'gray',borderBottomWidth:0.8,marginTop:10}}/>      
 {/* Promotions */}
 <View style={{marginLeft:20}}>
       <TouchableOpacity onPress={()=>navigate('')}>
@@ -121,7 +121,7 @@ class More extends React.Component {
       </View>
 </TouchableOpacity>
 </View>
-<View style={{borderBottomColor:'gray',borderBottomWidth:0.3,marginTop:10}}/>
+<View style={{borderBottomColor:'gray',borderBottomWidth:0.8,marginTop:10}}/>
 {/* Finance */}
 <View style={{marginLeft:20}}>
       <TouchableOpacity onPress={()=>navigate('')}>

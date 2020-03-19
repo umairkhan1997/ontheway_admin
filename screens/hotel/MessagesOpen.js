@@ -55,7 +55,7 @@ class MessagesOpen extends React.Component {
         <Header
          containerStyle={{
           backgroundColor: '#213d48',
-          height:60
+          height:latform.OS==='ios'?85:60
         }}
   leftComponent={
     <TouchableOpacity onPress={()=>navigate('Message')}>
