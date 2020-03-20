@@ -4,7 +4,8 @@ import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput
 import { Root,Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input, Toast,} from 'native-base';
 import { Platform } from 'react-native';
 // import darkblue from '../../color'
-
+import { updateUser } from "../Redux/actions/authActions";
+import { connect } from "react-redux";
 
 class ScreenOne extends React.Component {
     static navigationOptions={
@@ -62,15 +63,26 @@ else if(this.state.username.length < 6){
       });
     }
     else{
+        
+        
         this.props.navigation.navigate('ScreenTwo')
     }
 }
-
+testing=()=>{
+    const {firstName,email,username} = this.state;
+    const userdata={
+        firstName:firstName,email:email,username:username
+    }
+    console.log(firstName,email,username,'firstName,email,username');
+    this.props.updateUser({
+            user_data: userdata
+        })
+}
 
     render() {
 
         const {navigate}=this.props.navigation;
-      
+      console.log(this.props.user,"this.props.user")
         return (
             <Root>
             <View  style={{flex:1,backgroundColor:'white'}}>
@@ -126,8 +138,8 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
           {/* </KeyboardAvoidingView > */}
           <View>
     <Button 
-    // onPress={()=>this.Next()}
-    onPress={()=>navigate('ScreenTwo')}
+    onPress={()=>this.testing()}
+    // onPress={()=>navigate('ScreenTwo')}
      style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
@@ -138,4 +150,19 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
 }
 }
 
-export default  ScreenOne;
+const mapStateToProps = state => {
+    return {
+      user: state.authReducers.user,
+    };
+  };
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+        updateUser: user => dispatch(updateUser(user)),
+    };
+  };
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(ScreenOne);

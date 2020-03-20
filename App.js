@@ -27,32 +27,20 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Main from './Main'
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/lib/integration/react";
+import { store, persistor } from "./Redux/store";
 
-function HomeScreen({navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
 
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
-const Stack = createStackNavigator();
 
 
 const App: () => React$Node = () => {
   return (
+    <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
     <Main />
+    </PersistGate>
+      </Provider>
   );
 };
 
