@@ -16,7 +16,8 @@ class ScreenThree extends React.Component {
         rnameOne:'',
         rbedOne:null,
         guestOne:null,
-        priceOne:null
+        priceOne:null,
+        lrglS:'no'
         }
 
     }
@@ -71,6 +72,32 @@ Next=()=>{
   }
 }
 
+lrgl=()=>{
+if(this.state.lrglS==='yes'){
+  this.setState({
+    lrglS:'no'
+  })
+}
+else if(this.state.lrglS==='no'){
+  this.setState({
+    lrglS:'yes'
+  })
+}
+console.log(this.state.lrglS)
+}
+lrglN=()=>{
+  if(this.state.lrglS==='yes'){
+    this.setState({
+      lrglS:'no'
+    })
+  }
+  else if(this.state.lrglS==='no'){
+    this.setState({
+      lrglS:'yes'
+    })
+  }
+  console.log(this.state.lrglS)
+  }
     render() {
 
         const {navigate}=this.props.navigation;
@@ -193,15 +220,17 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>v) Will You Offer Lower Rate When Guest are less ?</Text>
             <View style={{flexDirection:'row',justifyContent:'center',marginTop:20}}>
-            <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'10%'}}>
+            <Button 
+            onPress={()=>this.lrgl()} 
+            style={{justifyContent:'center',backgroundColor:'#0078d7',opacity:this.state.lrglS==='yes'?1:0.5,height:30,width:'30%',marginHorizontal:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes</Text>
     </Button>
-    <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'10%'}}>
+    <Button onPress={()=>this.lrglN()} style={{justifyContent:'center',backgroundColor:'#0078d7',opacity:this.state.lrglS==='no'?1:0.5,height:30,width:'30%',marginHorizontal:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
             </View>
             </View>
-            <View style={{marginBottom:20}}>
+            {/* <View style={{marginBottom:20}}>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>v) Will You Offer Lower Rate When Guest are less ?</Text>
             <View style={{flexDirection:'row',justifyContent:'center',marginTop:20}}>
             <Button onPress={()=>navigate('')} style={{justifyContent:'center',backgroundColor:'#0078d7',height:30,width:'30%',marginHorizontal:'3%'}}>
@@ -214,7 +243,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Both</Text>
     </Button>
             </View>
-            </View>
+            </View> */}
                        </View>
           </ScrollView>
           </View >
