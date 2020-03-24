@@ -2,7 +2,8 @@ import React from 'react';
 import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput ,
     ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity,Platform} from 'react-native';
 import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,Toast, Root} from 'native-base';
-// import darkblue from '../../color'
+import { connect } from "react-redux";
+import { updatePropInfo } from "../Redux/actions/authActions";
 
 
 class ScreenTwo extends React.Component {
@@ -59,15 +60,24 @@ class ScreenTwo extends React.Component {
                                         this.ToastFunc('Enter Postal Code ')
                                           }
                                           else{
+const {propertyName,propertyStar,contactNumber,phoneNumber,altPhoneNumber,startAddress,country,city,pCode} = this.state;
+                                            const propInfoData={
+                                              propertyNames:propertyName,propertyStars:propertyStar,contactNumbers:contactNumber,phoneNumbers:phoneNumber,
+                                              altPhoneNumbers:altPhoneNumber,startAddresss:startAddress,countrys:country,citys:city,pCodes:pCode
+                                            }
+                                            // console.log(propertyName,propertyStar,contactNumber,phoneNumber,altPhoneNumber,startAddress,country,city,pCode,'propertyName,propertyStar,');
+                                            this.props.updatePropInfo({
+                                              propInfo_Data: propInfoData
+                                                })
                                               this.props.navigation.navigate('ScreenThree')
                                           }
                               
         }
 
     render() {
-
+      // console.log(this.props.propInfo,"this.props.user",this.state)
         const {navigate}=this.props.navigation;
-      
+        const {propertyNames,propertyStars,contactNumbers,phoneNumbers,altPhoneNumbers,startAddresss,countrys,citys,pCodes} = this.props.propInfo.propInfo_Data
         return (
             <Root>
             <View  style={{flex:1,backgroundColor:'white'}} >
@@ -91,7 +101,7 @@ class ScreenTwo extends React.Component {
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>i) Enter Your Property Name :</Text>
             <Input
-   value={this.state.propertyName}
+   value={propertyNames!=""?propertyNames:this.state.propertyName}
    onChangeText={propertyName => this.setState({ propertyName })}
    placeholder='Property Name' placeholderTextColor='gray'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
@@ -101,7 +111,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
                         <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>ii) Enter Your Property Star Rating:</Text>
             <Input
-   value={this.state.propertyStar}
+   value={propertyStars!=""?propertyStars:this.state.propertyStar}
    onChangeText={propertyStar => this.setState({ propertyStar })}
    placeholder='Property Star Number' placeholderTextColor='gray'
    keyboardType='numeric'
@@ -112,7 +122,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
                     <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>iii) Enter Contact Number :</Text>
             <Input
-   value={this.state.contactNumber}
+   value={contactNumbers!=""?contactNumbers:this.state.contactNumber}
    onChangeText={contactNumber => this.setState({ contactNumber })}
    placeholder='contactNumber' placeholderTextColor='gray'
    keyboardType='numeric'
@@ -122,7 +132,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>iv) Enter Phone Number :</Text>
             <Input
-   value={this.state.phoneNumber}
+   value={phoneNumbers!=""?phoneNumbers:this.state.phoneNumber}
    onChangeText={phoneNumber => this.setState({ phoneNumber })}
    placeholder='phoneNumber' placeholderTextColor='gray'
    keyboardType='numeric'
@@ -132,7 +142,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>v) Enter Alternate Phone Number :</Text>
             <Input
-   value={this.state.altPhoneNumber}
+   value={altPhoneNumbers!=""?altPhoneNumbers:this.state.altPhoneNumber}
    onChangeText={altPhoneNumber => this.setState({ altPhoneNumber })}
    placeholder='altPhoneNumber' placeholderTextColor='gray'
    keyboardType='numeric'
@@ -141,7 +151,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>vi) Enter Property Address :</Text>
             <Input
-   value={this.state.startAddress}
+   value={startAddresss!=""?startAddresss:this.state.startAddress}
    onChangeText={startAddress => this.setState({ startAddress })}
    placeholder='startAddress' placeholderTextColor='gray'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
@@ -149,7 +159,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>vii) Enter Country/Region :</Text>
             <Input
-   value={this.state.country}
+   value={countrys!=""?countrys:this.state.country}
    onChangeText={country => this.setState({ country })}
    placeholder='country' placeholderTextColor='gray'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
@@ -157,7 +167,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>viii) Enter City :</Text>
             <Input
-   value={this.state.city}
+   value={citys!=""?citys:this.state.city}
    onChangeText={city => this.setState({ city })}
    placeholder='country' placeholderTextColor='gray'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
@@ -165,7 +175,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             <View style={{marginBottom:20}}>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>ix) Enter Post Code :</Text>
             <Input
-   value={this.state.pCode}
+   value={pCodes!=""?pCodes:this.state.pCode}
    onChangeText={pCode => this.setState({ pCode })}
    placeholder='pCode' placeholderTextColor='gray'
    keyboardType='numeric'
@@ -187,5 +197,19 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
             );
 }
 }
+const mapStateToProps = state => {
+  return {
+    propInfo: state.authReducers.propInfo,
+  };
+};
 
-export default  ScreenTwo;
+const mapDispatchToProps = dispatch => {
+  return {
+    updatePropInfo: user => dispatch(updatePropInfo(user)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ScreenTwo);

@@ -64,25 +64,23 @@ else if(this.state.username.length < 6){
     }
     else{
         
-        
+      const {firstName,email,username} = this.state;
+      const userdata={
+          firstName:firstName,email:email,username:username
+      }
+      // console.log(firstName,email,username,'firstName,email,username');
+      this.props.updateUser({
+              user_data: userdata
+          })
         this.props.navigation.navigate('ScreenTwo')
     }
 }
-testing=()=>{
-    const {firstName,email,username} = this.state;
-    const userdata={
-        firstName:firstName,email:email,username:username
-    }
-    console.log(firstName,email,username,'firstName,email,username');
-    this.props.updateUser({
-            user_data: userdata
-        })
-}
+
 
     render() {
 
         const {navigate}=this.props.navigation;
-      console.log(this.props.user,"this.props.user")
+      // console.log(this.props.user,"this.props.user",this.state)
         return (
             <Root>
             <View  style={{flex:1,backgroundColor:'white'}}>
@@ -106,7 +104,7 @@ testing=()=>{
             <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>i) Enter Your Name :</Text>
             <Input
-   value={this.state.firstName}
+   value={this.props.user.firstName!=""?this.props.user.firstName:this.state.firstName}
    onChangeText={firstName => this.setState({ firstName })}
    placeholder='Full Name' placeholderTextColor='gray'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
@@ -116,7 +114,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
                         <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>ii) Enter Your Email :</Text>
             <Input
-   value={this.state.email}
+   value={this.props.user.email!=""?this.props.user.email:this.state.email}
    onChangeText={email => this.setState({ email })}
    placeholder='Email' placeholderTextColor='gray'
    keyboardType='email-address'
@@ -127,7 +125,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
                     <View>
             <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>iii) Enter Your Username :</Text>
             <Input
-   value={this.state.username}
+   value={this.props.user.username!=""?this.props.user.username:this.state.username}
    onChangeText={username => this.setState({ username })}
    placeholder='username' placeholderTextColor='gray'
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
@@ -138,8 +136,8 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
           {/* </KeyboardAvoidingView > */}
           <View>
     <Button 
-    onPress={()=>this.testing()}
-    // onPress={()=>navigate('ScreenTwo')}
+    // onPress={()=>this.Next()}
+    onPress={()=>navigate('ScreenTwo')}
      style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>

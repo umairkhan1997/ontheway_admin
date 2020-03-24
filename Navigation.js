@@ -39,6 +39,9 @@ import ScreenFour from './screens/ScreenFour'
 import ScreenFive from './screens/ScreenFive'
 import ScreenSix from './screens/ScreenSix'
 import ScreenSeven from './screens/ScreenSeven'
+import ACsignin from './screens/SignIn'
+import ACsignup from './screens/Signup'
+import Spl from './screens/Spl'
 
 //import IMGAES 
 import iconActivity from "./images/pulseblue.png"
@@ -105,6 +108,9 @@ function HotelNav() {
           <Stack.Screen name="ScreenFive" component={ScreenFive} />
           <Stack.Screen name="ScreenSix" component={ScreenSix} />
           <Stack.Screen name="ScreenSeven" component={ScreenSeven} />
+          <Stack.Screen name="Spl" component={Spl} />
+          <Stack.Screen name="ACsignup" component={ACsignup} />
+          <Stack.Screen name="ACsignin" component={ACsignin} />
         </Stack.Navigator>
     );
   };
