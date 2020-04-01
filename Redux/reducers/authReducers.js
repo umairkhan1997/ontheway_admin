@@ -2,6 +2,9 @@ const initial_state = {
     user: null,
     propInfo: null,
     RoomInfo: null,
+    carUserInfoProp:null,
+    ShowRoomInfoDataProp:null,
+    updateCarCountDataProp:null
   };
   
   const reducer = (state = initial_state, action) => {
@@ -14,6 +17,15 @@ const initial_state = {
       }
       case "updateRoom_Info": {
         return { ...state, RoomInfo: action.info };
+      }
+      case "carUser_Info": {
+        return { ...state, carUserInfoProp: action.info };
+      }
+      case "ShowRoomInfo_Data": {
+        return { ...state, ShowRoomInfoDataProp: action.info };
+      }
+      case "updateCarCount_Data": {
+        return { ...state, updateCarCountDataProp: action.info };
       }
       default: {
         return state;

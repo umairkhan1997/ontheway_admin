@@ -71,6 +71,13 @@ import Setting from './screens/hotel/Setting/setting'
 import { Iconsss } from 'react-native-elements'
 
 
+// CAR SCREEN
+import CarScreenOne from './screens/car/addInfo/carScreenOne'
+import CarScreenTwo from './screens/car/addInfo/carScreenTwo'
+import CarScreenThree from './screens/car/addInfo/carScreenThree'
+import CarScreenFour from './screens/car/addInfo/carScreenFour'
+import CarScreenFive from './screens/car/addInfo/carScreenFive'
+import CarScreenSix from './screens/car/addInfo/carScreenSix'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -78,6 +85,7 @@ const Tab = createBottomTabNavigator();
 const HotelMore = createStackNavigator()
 const HotelMessage = createStackNavigator()
 
+const CarStack = createStackNavigator();
 
 function MoreTab() {
   return (
@@ -112,6 +120,19 @@ function HotelNav() {
           <Stack.Screen name="ACsignup" component={ACsignup} />
           <Stack.Screen name="ACsignin" component={ACsignin} />
         </Stack.Navigator>
+    );
+  };
+
+  function ShowRoomNav() {
+    return (
+        <CarStack.Navigator screenOptions={{headerShown:false}}>
+          <CarStack.Screen name="CarScreenOne" component={CarScreenOne} />
+          <CarStack.Screen name="CarScreenTwo" component={CarScreenTwo} />
+          <CarStack.Screen name="CarScreenThree" component={CarScreenThree} />
+          <CarStack.Screen name="CarScreenFour" component={CarScreenFour} />
+          <CarStack.Screen name="CarScreenFive" component={CarScreenFive} />
+          <CarStack.Screen name="CarScreenSix" component={CarScreenSix} />
+        </CarStack.Navigator>
     );
   };
   
@@ -183,6 +204,8 @@ function MainNavi() {
         <Stack.Screen name="Bookit" component={Bookit}/>  
         <Stack.Screen name="HotelNav" component={HotelNav} />
         <Stack.Screen name="HotelTab" component={HotelTab} />
+        <Stack.Screen name="ShowRoomNav" component={ShowRoomNav} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

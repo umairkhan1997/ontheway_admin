@@ -4,10 +4,10 @@ import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput
 import { Root,Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input, Toast,} from 'native-base';
 import { Platform } from 'react-native';
 // import darkblue from '../../color'
-import { updateUser } from "../Redux/actions/authActions";
+import { carUserInfo } from "../../../Redux/actions/authActions";
 import { connect } from "react-redux";
 
-class ScreenOne extends React.Component {
+class CarScreenOne extends React.Component {
     static navigationOptions={
         header:null,
     } 
@@ -80,10 +80,10 @@ else if(this.state.username.length < 6){
           firstName:firstName,email:email,username:username,password:password
       }
       // console.log(firstName,email,username,'firstName,email,username');
-      this.props.updateUser({
+      this.props.carUserInfo({
               user_data: userdata
           })
-        this.props.navigation.navigate('ScreenTwo')
+        this.props.navigation.navigate('CarScreenTwo')
     }
 }
 
@@ -99,7 +99,7 @@ else if(this.state.username.length < 6){
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
             <Left style={{flexDirection:'row',marginTop:20}}>
                                      <TouchableOpacity onPress={()=>navigate('Bookit')}>
-                                     <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
+                                     <Image source={require('../../../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
                                      </TouchableOpacity>
 <Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>1# Form</Text>
      </Left>
@@ -158,7 +158,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
           <View>
     <Button 
     onPress={()=>this.Next()}
-    // onPress={()=>navigate('ScreenTwo')}
+    // onPress={()=>navigate('CarScreenTwo')}
      style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
@@ -171,17 +171,17 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
 
 const mapStateToProps = state => {
     return {
-      user: state.authReducers.user,
+      carUserInfoProp: state.authReducers.carUserInfoProp,
     };
   };
   
   const mapDispatchToProps = dispatch => {
     return {
-        updateUser: user => dispatch(updateUser(user)),
+      carUserInfo: user => dispatch(carUserInfo(user)),
     };
   };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(ScreenOne);
+  )(CarScreenOne);

@@ -33,14 +33,14 @@ class Bookit extends React.Component {
     </Button>
 {/*  */}
     <Button 
-    onPress={()=>navigate('')}
+    // onPress={()=>navigate('')}
     style={{flexDirection:'column',justifyContent:'center',marginHorizontal:'2.5%',borderColor:'white',borderWidth:0.9,marginBottom:15,width:'45%',
  backgroundColor:'white',borderRadius:20,height:120}}>
             <Image source={require('../images/bus.png')} style={{width:50,height:50}}/>
             <Text style={{textAlign:'center',fontSize:16,fontWeight:'500',color:'#DA1A4D',marginTop:10}}>Bus Admin</Text>
     </Button>
     <Button 
-      onPress={()=>navigate('')}
+      onPress={()=>navigate('ShowRoomNav')}
     style={{flexDirection:'column',justifyContent:'center',marginHorizontal:'2.5%',borderColor:'white',borderWidth:0.3,backgroundColor:'white',width:'45%',height:120,borderRadius:20}}>
             <Image source={require('../images/car.png')} style={{width:50,height:50}}/>
             <Text style={{textAlign:'center',color:'#DA1A4D',fontSize:16,fontWeight:'500',marginTop:10}}>Car Admin</Text>

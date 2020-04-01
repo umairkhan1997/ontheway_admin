@@ -3,10 +3,10 @@ import { Text, View, StyleSheet, TouchableHighlight,SafeAreaView,Image,TextInput
     ImageBackground,Dimensions,KeyboardAvoidingView,ScrollView,TouchableOpacity,Platform} from 'react-native';
 import { Icon ,Drawer, Item ,Header,Body,Card,Left,Right,Button,Picker,Input,Toast, Root} from 'native-base';
 import { connect } from "react-redux";
-import { updatePropInfo } from "../Redux/actions/authActions";
+import { updateShowRoomInfoData } from "../../../Redux/actions/authActions";
 
 
-class ScreenTwo extends React.Component {
+class CarScreenTwo extends React.Component {
     static navigationOptions={
         header:null,
     } 
@@ -61,15 +61,15 @@ class ScreenTwo extends React.Component {
                                           }
                                           else{
 const {propertyName,propertyStar,contactNumber,phoneNumber,altPhoneNumber,startAddress,country,city,pCode} = this.state;
-                                            const propInfoData={
+                                            const showRoomInfoData={
                                               propertyNames:propertyName,propertyStars:propertyStar,contactNumbers:contactNumber,phoneNumbers:phoneNumber,
                                               altPhoneNumbers:altPhoneNumber,startAddresss:startAddress,countrys:country,citys:city,pCodes:pCode
                                             }
                                             // console.log(propertyName,propertyStar,contactNumber,phoneNumber,altPhoneNumber,startAddress,country,city,pCode,'propertyName,propertyStar,');
-                                            this.props.updatePropInfo({
-                                              propInfo_Data: propInfoData
+                                            this.props.updateShowRoomInfoData({
+                                              propInfo_Data: showRoomInfoData
                                                 })
-                                              this.props.navigation.navigate('ScreenThree')
+                                              this.props.navigation.navigate('CarScreenThree')
                                           }
                               
         }
@@ -85,8 +85,8 @@ const {propertyName,propertyStar,contactNumber,phoneNumber,altPhoneNumber,startA
                 <View style={{height:55,marginTop:0 }} >
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
                                      <Left style={{flexDirection:'row',marginTop:20}}>
-                                     <TouchableOpacity onPress={()=>navigate('ScreenOne')}>
-                                     <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
+                                     <TouchableOpacity onPress={()=>navigate('CarScreenOne')}>
+                                     <Image source={require('../../../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
                                      </TouchableOpacity>
 <Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>2# Form</Text>
      </Left>
@@ -94,13 +94,13 @@ const {propertyName,propertyStar,contactNumber,phoneNumber,altPhoneNumber,startA
             </Header>
       </View>
       {/* <KeyboardAvoidingView behavior="padding" enabled style={{ backgroundColor:'white' }}> */}
-      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48',marginTop:Platform.OS==='ios'?40:0}}>Property Info</Text>
+      <Text style={{marginVertical:20,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48',marginTop:Platform.OS==='ios'?40:0}}>ShowRoom Info</Text>
       <View style={{flex: 0.95,}}>
           <ScrollView style={{  }}>
 
             {/* NAME FIELD */}
             <View>
-            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>i) Enter Your Property Name :</Text>
+            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>i) Enter Your ShowRoom Name :</Text>
             <Input
    value={propObj!=null?propObj.propInfo_Data.propertyNames:this.state.propertyName}
    onChangeText={propertyName => this.setState({ propertyName })}
@@ -110,7 +110,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
 
                         {/* EMAIL FIELD */}
                         <View>
-            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>ii) Enter Your Property Star Rating:</Text>
+            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>ii) Enter Your ShowRoom Star Rating:</Text>
             <Input
    value={propObj!=null?propObj.propInfo_Data.propertyStars:this.state.propertyStar}
    onChangeText={propertyStar => this.setState({ propertyStar })}
@@ -150,7 +150,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
 style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'black',width:'90%',marginLeft:'5%'}}/>
             </View>
             <View>
-            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>vi) Enter Property Address :</Text>
+            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>vi) Enter ShowRoom Address :</Text>
             <Input
    value={propObj!=null?propObj.propInfo_Data.startAddresss:this.state.startAddress}
    onChangeText={startAddress => this.setState({ startAddress })}
@@ -187,7 +187,7 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
           {/* </KeyboardAvoidingView > */}
           <View>
     <Button
-    //  onPress={()=>navigate('ScreenThree')} 
+    //  onPress={()=>navigate('CarScreenThree')} 
     onPress={()=>this.Next()}
     style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
@@ -200,17 +200,17 @@ style={{fontSize:14,fontWeight:'400',borderBottomWidth:0.5,borderBottomColor:'bl
 }
 const mapStateToProps = state => {
   return {
-    propInfo: state.authReducers.propInfo,
+    ShowRoomInfoDataProp: state.authReducers.ShowRoomInfoDataProp,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updatePropInfo: user => dispatch(updatePropInfo(user)),
+    updateShowRoomInfoData: user => dispatch(updateShowRoomInfoData(user)),
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ScreenTwo);
+)(CarScreenTwo);

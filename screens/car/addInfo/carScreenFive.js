@@ -4,7 +4,7 @@ import { Header,Left,Right,Button,Root,Toast} from 'native-base';
 // import darkblue from '../../color'
 
 
-class ScreenSix extends React.Component {
+class CarScreenFive extends React.Component {
     static navigationOptions={
         header:null,
     } 
@@ -13,7 +13,8 @@ class ScreenSix extends React.Component {
         this.state = {
           starCount: 3.5,
           accChild: "no",
-          countR:1
+          countR:1,
+          ccCard:'no',
         }
     }
 
@@ -46,6 +47,18 @@ class ScreenSix extends React.Component {
         }
         }
 
+        lrgl=()=>{
+          if(this.state.ccCard==='yes'){
+            this.setState({
+              ccCard:'no'
+            })
+          }
+          else if(this.state.ccCard==='no'){
+            this.setState({
+              ccCard:'yes'
+            })
+          }
+          }
     render() {
 
         const {navigate}=this.props.navigation;
@@ -57,9 +70,9 @@ class ScreenSix extends React.Component {
             <Header style={{ backgroundColor: '#1f3d48', }} androidStatusBarColor='#284e5c'>
             <Left style={{flexDirection:'row',marginTop:20}}>
                                      <TouchableOpacity onPress={()=>navigate('ScreenFive')}>
-                                     <Image source={require('../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
+                                     <Image source={require('../../../images/back.png')}  style={{marginBottom:22,width:20,height:20,}}/>
                                      </TouchableOpacity>
-<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>6# Form</Text>
+<Text style={{color:'white',marginLeft:20,fontSize:18,fontWeight:'500'}}>5# Form</Text>
      </Left>
      <Right/>
             </Header>
@@ -127,28 +140,31 @@ class ScreenSix extends React.Component {
                         </View>
             </View>
 
-       
-
-
-    
-       
-        <View>
-            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:20}}>v) Will You Accomodate Children ?</Text>
+            <View>
+            <Text style={{fontSize:16,fontWeight:'500',marginLeft:10,marginTop:50}}>ii) Can You Charge Credit Cards At Your Hotel ?</Text>
             <View style={{flexDirection:'row',justifyContent:'center',marginTop:20}}>
-            <Button onPress={()=>this.lrgl('')} style={{opacity:this.state.accChild==='yes'?1:0.5,justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'10%'}}>
+            <Button onPress={()=>this.lrgl()} style={{opacity:this.state.ccCard==='yes'?1:0.5,justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Yes</Text>
     </Button>
-    <Button onPress={()=>this.lrgl('')} style={{opacity:this.state.accChild==='no'?1:0.5,justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'10%'}}>
+    <Button onPress={()=>this.lrgl()} style={{opacity:this.state.ccCard==='no'?1:0.5,justifyContent:'center',backgroundColor:'#ba0916',height:30,width:'30%',marginHorizontal:'10%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>No</Text>
     </Button>
             </View>
+                        <Text style={{fontSize:16,fontWeight:'500',textAlign:'center',marginTop:20}}> You Can Change Payment When You Get Online.</Text>
             </View>
-       
+
+            <View>
+
+<Text style={{marginVertical:20,marginTop:50,fontSize:28,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Commission</Text>
+<Text style={{fontSize:16,fontWeight:'500',width:'90%',marginLeft:'5%',marginTop:20,width:'90%',textTransform:'capitalize',textAlign:'center'}}>At The Start Of The Month We Will Send You You An Invoice of all booking of previous month , invoice will be sent you in  your dashboard and also on email address : </Text>
+<Text style={{marginBottom:30,marginTop:40,fontSize:18,fontWeight:'500',textAlign:"center",color:'#213d48'}}>Commission Percentage: 10%</Text>
+
+</View>
 
           </ScrollView>
           </View >
           <View>
-    <Button onPress={()=>navigate('ScreenSeven')} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
+    <Button onPress={()=>navigate('CarScreenSix')} style={{justifyContent:'center',backgroundColor:'#ba0916',width:'98%',marginLeft:'1%'}}>
         <Text style={{fontSize:16,fontWeight:'500',color:'white'}}>Next</Text>
     </Button>
 </View>
@@ -158,4 +174,4 @@ class ScreenSix extends React.Component {
 }
 }
 
-export default  ScreenSix;
+export default  CarScreenFive;

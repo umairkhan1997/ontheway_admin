@@ -17,5 +17,22 @@ const updateUser = user => {
       info
     };
   };
-  
-  export { updateUser,updatePropInfo,updateRoomInfo };
+  const carUserInfo = info => {
+    return {
+      type: "carUser_Info",
+      info
+    };
+  };
+  const updateShowRoomInfoData = info => {
+    return {
+      type: "ShowRoomInfo_Data",
+      info
+    };
+  };
+  const updateCarCount = info => {
+    return {
+      type: "updateCarCount_Data",
+      info
+    };
+  };
+  export { updateUser,updatePropInfo,updateRoomInfo,carUserInfo,updateShowRoomInfoData,updateCarCount };
